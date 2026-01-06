@@ -1,55 +1,71 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║    ██████╗ ██████╗  █████╗ ██╗   ██╗ █████╗ ███╗   ██╗                      ║
+║    ██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝██╔══██╗████╗  ██║                      ║
+║    ██████╔╝██████╔╝███████║ ╚████╔╝ ███████║██╔██╗ ██║                      ║
+║    ██╔══██╗██╔══██╗██╔══██║  ╚██╔╝  ██╔══██║██║╚██╗██║                      ║
+║    ██████╔╝██║  ██║██║  ██║   ██║   ██║  ██║██║ ╚████║                      ║
+║    ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝                      ║
+║                                                                              ║
+║    ███╗   ███╗ █████╗ ██████╗ ██╗ █████╗ ███╗   ██╗██╗                     ║
+║    ████╗ ████║██╔══██╗██╔══██╗██║██╔══██╗████╗  ██║██║                     ║
+║    ██╔████╔██║███████║██████╔╝██║███████║██╔██╗ ██║██║                     ║
+║    ██║╚██╔╝██║██╔══██║██╔══██╗██║██╔══██║██║╚██╗██║██║                     ║
+║    ██║ ╚═╝ ██║██║  ██║██║  ██║██║██║  ██║██║ ╚████║██║                     ║
+║    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝                     ║
+║                                                                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║                        S I S T E M A   D E                                   ║
+║                C O M U N I D A D E S   V I R T U A L E S                     ║
+║                        E D U C A T I V A S                                   ║
+║                                                                              ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║                                                                              ║
+║                         👨‍💻  A U T O R:                                    ║
+║                                                                              ║
+║                 ░▒▓██████▓▒░ ░▒▓█▓▒░ ░▒▓██████▓▒░                            ║
+║                 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░                            ║
+║                 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░                            ║
+║                 ░▒▓████████▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░                            ║
+║                 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░                            ║
+║                 ░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓██████▓▒░                             ║
+║                                                                              ║
+║                    <span style="color: #ff0000; font-weight: bold; font-size: 1.5em;">B R A Y A N   M A R I A N I</span>              ║
+║                                                                              ║
+║                    "Desarrollador Full Stack Apasionado"                     ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+## 🚀 INSTALACIÓN RÁPIDA
+
+```bash
+# 1. Clonar repositorio
+git clone https://github.com/brayanmariani2000/comunidadesVirtuales.git
+
+# 2. Navegar al directorio
+cd comunidadesVirtuales
+
+# 3. Instalar dependencias PHP
+composer install
+
+# 4. Configurar entorno
+cp .env.example .env
+php artisan key:generate
+
+# 5. Configurar base de datos (en .env)
+# DB_DATABASE=comunidades_virtuales
+# DB_USERNAME=root
+# DB_PASSWORD=
+
+# 6. Ejecutar migraciones
+php artisan migrate
+
+# 7. Poblar base de datos
+php artisan db:seed
+
+# 8. Instalar dependencias frontend
 
 
----
-
-## Autor
-### **![Brayan Mariani](img.shields.io)**
-> Desarrollador apasionado por crear soluciones tecnológicas innovadoras y funcionales.
-
----
-
-##  Instrucciones de Instalación
-
-Sigue estos pasos para poner en marcha el sistema en tu entorno local:
-
-1. **Clonar el repositorio:**
-   ```bash
-   git clone https://github.com/brayanmariani2000/comunidadesVirtuales.git
-   cd comunidadesVirtuales
-   ```
-
-2. **Instalar dependencias de PHP:**
-   ```bash
-   composer install
-   ```
-
-
-4. **Configurar el entorno:**
-   Copia el archivo de ejemplo y configura tus credenciales de base de datos en el archivo `.env`.
-   ```bash
-   cp .env.example .env
-   php artisan key:generate
-   ```
-
-5. **Preparar la base de datos:**
-   Ejecuta las migraciones y los seeders para cargar la estructura y los datos iniciales.
-   ```bash
-   php artisan migrate
-   php artisan db:seed
-   ```
-
-6. opcional **Iniciar el servidor:**
-   ```bash
-   php artisan serve
-   ```
-
----
-
-## Características Principales
-- **Chat en Tiempo Real:** Comunicación instantánea sin recargar la página.
-- **Gestión Académica:** Control de unidades curriculares, materiales y tareas.
-- **Roles de Usuario:** Interfaces personalizadas para Administradores, Profesores y Estudiantes.
-- **Diseño Moderno:** Interfaz intuitiva y atractiva.
-
----
-
+# 9. Iniciar servidor
+php artisan serve
