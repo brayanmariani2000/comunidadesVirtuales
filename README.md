@@ -3,7 +3,7 @@
 ---
 
 ## Autor
-### **Brayan Mariani**
+### **![Brayan Mariani](img.shields.io)**
 > Desarrollador apasionado por crear soluciones tecnológicas innovadoras y funcionales.
 
 ---
