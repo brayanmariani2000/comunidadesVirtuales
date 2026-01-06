@@ -267,7 +267,63 @@ public function show($id)
             ]);
         }
         
+        if ($request->ajax()) {
+            return response()->json([
+                'success' => true,
+                'message' => 'Mensaje enviado',
+                'id_mensaje' => $mensajeId,
+                'html' => view('chat.partials.message', [
+                    'mensaje' => DB::table('mensajes as m')
+                        ->leftJoin('usuarios as u', 'm.id_usuario', '=', 'u.id_usuario')
+                        ->leftJoin('roles as r', 'u.id_rol', '=', 'r.id_rol')
+                        ->leftJoin('documentos_adjuntos as d', 'm.id_mensaje', '=', 'd.id_mensaje')
+                        ->where('m.id_mensaje', $mensajeId)
+                        ->select('m.*', 'u.nombre as usuario_nombre', 'u.apellido as usuario_apellido',
+                                'r.nombre_rol as usuario_rol',
+                                'd.nombre_archivo', 'd.tipo_archivo', 'd.tamano_archivo', 'd.ruta_almacenamiento')
+                        ->first(),
+                    'showAvatar' => true
+                ])->render()
+            ]);
+        }
+
         return back()->with('success', 'Mensaje enviado');
+    }
+
+    /**
+     * Obtener nuevos mensajes para el chat (AJAX)
+     */
+    public function getNuevosMensajes(Request $request, $idChat)
+    {
+        $lastMessageId = $request->query('last_id');
+        
+        $mensajes = DB::table('mensajes as m')
+            ->leftJoin('usuarios as u', 'm.id_usuario', '=', 'u.id_usuario')
+            ->leftJoin('roles as r', 'u.id_rol', '=', 'r.id_rol')
+            ->leftJoin('documentos_adjuntos as d', 'm.id_mensaje', '=', 'd.id_mensaje')
+            ->where('m.id_chat', $idChat)
+            ->where('m.id_mensaje', '>', $lastMessageId)
+            ->where('m.eliminado', false)
+            ->where('m.id_usuario', '!=', Auth::id()) // Solo mensajes de otros
+            ->select('m.*', 'u.nombre as usuario_nombre', 'u.apellido as usuario_apellido',
+                    'r.nombre_rol as usuario_rol',
+                    'd.nombre_archivo', 'd.tipo_archivo', 'd.tamano_archivo', 'd.ruta_almacenamiento')
+            ->orderBy('m.fecha_envio', 'asc')
+            ->get();
+            
+        $html = '';
+        foreach ($mensajes as $mensaje) {
+            $html .= view('chat.partials.message', [
+                'mensaje' => $mensaje,
+                'showAvatar' => true // Simplificado para polling
+            ])->render();
+        }
+        
+        return response()->json([
+            'html' => $html,
+            'count' => $mensajes->count(),
+            'last_id' => $mensajes->count() > 0 ? $mensajes->last()->id_mensaje : $lastMessageId
+        ]);
     }
 
     /**

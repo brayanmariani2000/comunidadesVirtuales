@@ -90,6 +90,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/{id}', [ChatController::class, 'show'])->name('show');
         Route::post('/{id}/mensaje', [ChatController::class, 'enviarMensaje'])->name('mensaje.enviar');
         Route::post('/{id}/tarea', [ChatController::class, 'publicarTarea'])->name('tarea.publicar');
+        Route::get('/{id}/mensajes/nuevos', [ChatController::class, 'getNuevosMensajes'])->name('mensajes.nuevos');
         Route::post('/{id}/participante', [ChatController::class, 'agregarParticipante'])->name('participante.agregar');
     });
 });
