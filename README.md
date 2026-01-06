@@ -18,7 +18,6 @@
 ╠══════════════════════════════════════════════════════════════╣
 ║                                                              ║
 ║               SISTEMA DE COMUNIDADES VIRTUALES               ║
-║                       EDUCATIVAS                             ║
 ║                                                              ║
 ╠══════════════════════════════════════════════════════════════╣
 ║                                                              ║
@@ -28,7 +27,7 @@
 ║           "Desarrollador Full Stack Apasionado"              ║
 ║                                                              ║
 ╚══════════════════════════════════════════════════════════════╝
-
+```
 ##  INSTALACIÓN RÁPIDA
 
 ```bash
@@ -46,18 +45,14 @@ cp .env.example .env
 php artisan key:generate
 
 # 5. Configurar base de datos (en .env)
-# DB_DATABASE=comunidades_virtuales
+# DB_DATABASE=laravel
 # DB_USERNAME=root
 # DB_PASSWORD=
-
 # 6. Ejecutar migraciones
 php artisan migrate
 
 # 7. Poblar base de datos
 php artisan db:seed
 
-# 8. Instalar dependencias frontend
-
-
-# 9. Iniciar servidor
-php artisan serve
+# 8. Opcional Iniciar servidor
+# php artisan serve
