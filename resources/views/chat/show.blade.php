@@ -173,7 +173,6 @@
                             @endphp
                             @include('chat.partials.message', ['mensaje' => $mensaje, 'showAvatar' => $showAvatar])
                         @empty
-                        @empty
                         <div class="empty-chat-state text-center py-5">
                             <div class="mb-4">
                                 <i class="bi bi-chat-square-text text-muted" style="font-size: 3rem; opacity: 0.5;"></i>

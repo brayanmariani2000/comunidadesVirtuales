@@ -453,27 +453,6 @@
                 <p>Portal de Acceso Académico</p>
             </div>
             
-            <!-- Features -->
-            <div class="features p-4 border-bottom">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="bi bi-chat-dots"></i>
-                    </div>
-                    <div class="feature-text">Chat Académico</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="bi bi-file-earmark-text"></i>
-                    </div>
-                    <div class="feature-text">Gestión de Tareas</div>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="bi bi-people"></i>
-                    </div>
-                    <div class="feature-text">Colaboración</div>
-                </div>
-            </div>
             
             <!-- Cuerpo del formulario -->
             <div class="login-body">
@@ -507,7 +486,7 @@
                     <!-- Campo Email -->
                     <div class="form-group mb-4">
                         <label for="correo" class="form-label">
-                            <i class="bi bi-envelope"></i>Correo Institucional
+                            <i class="bi bi-envelope"></i>Correo 
                         </label>
                         <div class="input-group">
                             <span class="input-group-text">
@@ -593,8 +572,7 @@
         
         <!-- Footer -->
         <div class="page-footer">
-            <p class="copyright">&copy; {{ date('Y') }} Universidad Nacional. Todos los derechos reservados.</p>
-            <p class="version">v2.1.0 • Build #{{ date('Ymd') }}</p>
+            <p class="copyright">&copy; {{ date('Y') }} Universidad Bolivariana de Venezuela.</p>
         </div>
     </div>
 
